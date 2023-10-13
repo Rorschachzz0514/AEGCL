@@ -1,0 +1,19 @@
+Football:
+  seed: 12421
+  learning_rate: 0.001
+  num_hidden: 128
+  num_proj_hidden: 128
+  activation: 'relu'
+  base_model: 'GCNConv'
+  num_layers: 2
+  drop_edge_rate_1: 0.8
+  drop_edge_rate_2: 0.8
+  drop_feature_rate_1: 0.8
+  drop_feature_rate_2: 0.8
+  tau: 0.4
+  weight_decay: 0.0001
+  patience: 20
+  lower: 0.3
+  upper: 0.9
+  node_lower: 0.2
+  node_upper: 0.8
