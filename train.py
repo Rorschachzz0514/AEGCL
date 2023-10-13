@@ -295,7 +295,7 @@ if __name__ == '__main__':
                             best_t = epoch
                             cnt_wait = 0
                             #只保存模型参数
-                            #torch.save(model.state_dict(), './model_' + str(tau) + '_' + datasets[0] + str1 + str2 + str3 + str4 + '.pkl')
+                            torch.save(model.state_dict(), './model_' + str(tau) + '_' + datasets[0] + str1 + str2 + str3 + str4 + '.pkl')
                             #保存所有模型
                             torch.save(model, './model_' + str(tau) + '_' + datasets[0]  + '_' + str(_) +'.pkl')
                             #print("更新了一次")
@@ -308,6 +308,6 @@ if __name__ == '__main__':
                             break
                     model=(torch.load('./model_' + str(tau) + '_' + datasets[0]  + '_' + str(_) +'.pkl'))
                     res,acc,nmi = train_test(model, allx, motifs_all, motifs_num, edges_index, edges_weight, ally, is_edge_weight, is_motif, final=True)
-                    # res_file.write(f'Epoch={best_t} F1Mi={res["F1Mi"]} F1Ma={res["F1Ma"]}\n acc={acc} nmi={nmi}')
-                    res_file.write(f'ephch={_}     acc={acc[0]}    nmi={nmi}\n')
+                    res_file.write(f'Epoch={best_t} F1Mi={res["F1Mi"]} F1Ma={res["F1Ma"]}\n acc={acc} nmi={nmi}')
+                    #res_file.write(f'ephch={_}     acc={acc[0]}    nmi={nmi}\n')
                     print(f'Epoch={best_t} F1Mi={res["F1Mi"]} F1Ma={res["F1Ma"]}acc={acc[0]} nmi={nmi}')
